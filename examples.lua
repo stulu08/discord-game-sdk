@@ -33,7 +33,7 @@ project "CPP"
 	}
 	
 	postbuildcommands {
-		"{COPYFILE} \"%{wks.location}/lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}/examples/%{cfg.targetdir}/discord_game_sdk.dll\""
+		"{COPYFILE} \"%{wks.location}lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}examples/bin/" .. outputdir .. "/discord_game_sdk.dll\""
 	}
 	
 	filter "system:windows"
@@ -84,7 +84,7 @@ project "C"
 	}
 	
 	postbuildcommands {
-		"{COPYFILE} \"%{wks.location}/lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}/examples/%{cfg.targetdir}/discord_game_sdk.dll\""
+		"{COPYFILE} \"%{wks.location}lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}examples/bin/" .. outputdir .. "/discord_game_sdk.dll\""
 	}
 	
 	filter "system:windows"
@@ -140,7 +140,7 @@ project "CSharp"
 	}
 	
 	postbuildcommands {
-		"{COPYFILE} \"%{wks.location}/lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}/examples/%{cfg.targetdir}/discord_game_sdk.dll\""
+		"{COPYFILE} \"%{wks.location}lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}examples/bin/" .. outputdir .. "/discord_game_sdk.dll\""
 	}
 
 	filter "configurations:Debug"
