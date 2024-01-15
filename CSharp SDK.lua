@@ -1,4 +1,4 @@
-project "CSharp SDK"
+project "Discord C# Game SDK"
 	kind "SharedLib"
 	language "C#"
 	location "csharp"

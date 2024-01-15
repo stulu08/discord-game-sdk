@@ -1,4 +1,4 @@
-project "CPP SDK"
+project "Discord C++ Game SDK"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"

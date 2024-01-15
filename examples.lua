@@ -1,4 +1,4 @@
-project "CPP"
+project "C++"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
@@ -26,10 +26,7 @@ project "CPP"
 	}
 	
 	links {
-		"CPP SDK",
-	}
-	libdirs {
-		"lib/%{cfg.architecture}/"
+		"Discord C++ Game SDK",
 	}
 	
 	postbuildcommands {
@@ -80,7 +77,11 @@ project "C"
 	}
 	
 	links {
-		"C SDK"
+		--"Discord C Game SDK",
+		"discord_game_sdk.dll.lib"
+	}
+	libdirs {
+		"lib/%{cfg.architecture}/"
 	}
 	
 	postbuildcommands {
@@ -108,7 +109,7 @@ project "C"
 		optimize "on"
 		symbols "off"
 		
-project "CSharp"
+project "C#"
 	kind "ConsoleApp"
 	language "C#"
 	location "examples/csharp"
@@ -136,12 +137,14 @@ project "CSharp"
 	}
 	
 	links {
-		"CSharp SDK"
+		"Discord C# Game SDK"
 	}
 	
+	
 	postbuildcommands {
-		"{COPYFILE} \"%{wks.location}lib/%{cfg.architecture}/discord_game_sdk.dll\" \"%{wks.location}examples/bin/" .. outputdir .. "/discord_game_sdk.dll\""
+		"{COPYFILE} \"%{wks.location}lib/%{cfg.architecture}/discord_game_sdk.dll\" \"$(TargetDir)discord_game_sdk.dll\""
 	}
+		
 
 	filter "configurations:Debug"
 		runtime "Debug"
